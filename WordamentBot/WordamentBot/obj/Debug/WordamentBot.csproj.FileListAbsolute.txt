@@ -1,0 +1,12 @@
+D:\TapMe\WordamentBot\WordamentBot\bin\Debug\WordamentBot.exe.config
+D:\TapMe\WordamentBot\WordamentBot\bin\Debug\WordamentBot.exe
+D:\TapMe\WordamentBot\WordamentBot\bin\Debug\WordamentBot.pdb
+D:\TapMe\WordamentBot\WordamentBot\obj\Debug\WordamentBot.csprojResolveAssemblyReference.cache
+D:\TapMe\WordamentBot\WordamentBot\obj\Debug\WordamentBot.exe
+D:\TapMe\WordamentBot\WordamentBot\obj\Debug\WordamentBot.pdb
+D:\GitHub\WordamentBot\WordamentBot\WordamentBot\bin\Debug\WordamentBot.exe.config
+D:\GitHub\WordamentBot\WordamentBot\WordamentBot\obj\Debug\WordamentBot.exe
+D:\GitHub\WordamentBot\WordamentBot\WordamentBot\obj\Debug\WordamentBot.pdb
+D:\GitHub\WordamentBot\WordamentBot\WordamentBot\bin\Debug\WordamentBot.exe
+D:\GitHub\WordamentBot\WordamentBot\WordamentBot\bin\Debug\WordamentBot.pdb
+D:\GitHub\WordamentBot\WordamentBot\WordamentBot\obj\Debug\WordamentBot.csprojResolveAssemblyReference.cache
