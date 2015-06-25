@@ -16,10 +16,10 @@ namespace WordamentBot
         static Dictionary<string, bool> wordList = new Dictionary<string, bool>();
         static Dictionary<string, List<int>> validWords = new Dictionary<string, List<int>>();
         static string[,] game = new string[,]{
-            {"I","R","S","A"},
-            {"I","N","E","I"},
-            {"G","N","N","D"},
-            {"M","U","R","O"}
+            {"C","I","L","S"},
+            {"S","A","D","E"},
+            {"RE","A","I","B"},
+            {"E","M","G","E"}
         };
 
         static int baseX = 225;
@@ -47,12 +47,12 @@ namespace WordamentBot
         private static void InitPixels()
         {
             Rectangle resolution = Screen.PrimaryScreen.Bounds;
-            double multiplierX = resolution.Size.Width / 1600;
-            double multiplierY = resolution.Size.Height / 900;
+            double multiplierX = resolution.Size.Width / 1600.0;
+            double multiplierY = resolution.Size.Height / 900.0;
             baseX = (int)(multiplierX * baseX);
             baseY = (int)(multiplierY * baseY);
-            incrementX = (int)(incrementX * baseX);
-            incrementY = (int)(incrementY * baseY);
+            incrementX = (int)(incrementX * multiplierX);
+            incrementY = (int)(incrementY * multiplierY);
         }
         private static void LoadDictionary()
         {
@@ -120,7 +120,7 @@ namespace WordamentBot
         }
         static void Main(string[] args)
         {
-           // InitPixels();
+            InitPixels();
             //  Thread.Sleep(3000);
             //  LeftMouseClick(225 , 220);
             //  LeftMouseClick(375, 220);
