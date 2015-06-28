@@ -16,10 +16,10 @@ namespace WordamentBot
         static Dictionary<string, bool> wordList = new Dictionary<string, bool>();
         static Dictionary<string, List<int>> validWords = new Dictionary<string, List<int>>();
         static string[,] game = new string[,]{
-            {"C","I","L","S"},
-            {"S","A","D","E"},
-            {"RE","A","I","B"},
-            {"E","M","G","E"}
+            {"I","S","E","R"},
+            {"N","S","U","F"},
+            {"A","E","P","O"},
+            {"P","H","R","U"}
         };
 
         static int baseX = 225;
@@ -112,10 +112,10 @@ namespace WordamentBot
                     y = keyValue.Value[pos] / 10;
                     x = keyValue.Value[pos] % 10;
                     LeftMouseClick(baseX + incrementX * x, baseY + incrementY * y);
-                    Thread.Sleep(30);
+                    Thread.Sleep(1);
                 }
                 mouse_event(MOUSEEVENTF_LEFTUP, 225 + 150 * x, 220 + 150 * y, 0, 0);
-                Thread.Sleep(30);
+                Thread.Sleep(1);
             }
         }
         static void Main(string[] args)
