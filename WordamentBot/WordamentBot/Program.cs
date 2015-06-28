@@ -16,10 +16,10 @@ namespace WordamentBot
         static Dictionary<string, bool> wordList = new Dictionary<string, bool>();
         static Dictionary<string, List<int>> validWords = new Dictionary<string, List<int>>();
         static string[,] game = new string[,]{
-            {"I","S","E","R"},
-            {"N","S","U","F"},
-            {"A","E","P","O"},
-            {"P","H","R","U"}
+            {"O","E","H","R"},
+            {"U","C","A","R"},
+            {"B","T","-ABLE","S"},
+            {"T","S","E","T"}
         };
 
         static int baseX = 225;
@@ -70,7 +70,14 @@ namespace WordamentBot
                 {
                     for (int j = 0; j < 4; j++)
                     {
-                        WordamentCrack(game[i, j], i * 10 + j, new List<int>() { i * 10 + j });
+                        if(game[i,j].StartsWith("-"))
+                        {
+                            continue;
+                        }
+                        foreach (string gameString in game[i, j].Split('/'))
+                        {
+                            WordamentCrack(gameString.TrimEnd('-'), i * 10 + j, new List<int>() { i * 10 + j });
+                        }
                     }
                 }
             }
@@ -93,10 +100,28 @@ namespace WordamentBot
                         int posToStore = r * 10 + c;
                         if (IsValidPosition(r) && IsValidPosition(c) && !coveredLetters.Contains(posToStore))
                         {
+                            if(game[r,c].EndsWith("-"))
+                            {
+                                continue;
+                            }
                             List<int> covLetters = new List<int>();
                             coveredLetters.ForEach(t => covLetters.Add(t));
                             covLetters.Add(posToStore);
-                            WordamentCrack(currentString + game[r, c], posToStore, covLetters);
+
+                            if (game[r, c].StartsWith("-"))
+                            {
+                                if (wordList.ContainsKey(currentString + game[r, c].TrimStart('-')) && !validWords.ContainsKey(currentString + game[r, c].TrimStart('-')))
+                                {
+                                    validWords.Add(currentString + game[r, c].TrimStart('-'), covLetters);
+                                }
+                            } 
+                            else
+                            {
+                                foreach(string gameString in game[r,c].Split('/'))
+                                {
+                                    WordamentCrack(currentString + gameString, posToStore, covLetters);
+                                }                                
+                            }
                         }
                     }
                 }
